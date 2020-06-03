@@ -1,6 +1,8 @@
 package com.oneutf.bean.model.query;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import java.time.LocalDateTime;
 
@@ -8,9 +10,11 @@ import java.time.LocalDateTime;
  * @author oneutf
  */
 @Data
-public class BeanQuery {
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
+public class BeanQuery extends PageQuery{
 
-    private Long id;
+    private String id;
 
     private String createBy;
 
