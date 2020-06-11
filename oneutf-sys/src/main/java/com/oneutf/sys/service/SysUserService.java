@@ -1,6 +1,6 @@
 package com.oneutf.sys.service;
 
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.github.pagehelper.PageInfo;
 import com.oneutf.bean.result.ApiResult;
 import com.oneutf.bean.service.BeanService;
 import com.oneutf.sys.model.dto.SysUserDto;
@@ -18,44 +18,39 @@ public interface SysUserService extends BeanService<SysUser> {
      * 分页查询
      *
      * @param qo 条件类
-     * @return Page<SysUserVo>
-     * @throws Exception e
+     * @return PageInfo<SysUserVo>
      */
-    ApiResult<Page<SysUserVo>> list(SysUserQuery qo) throws Exception;
+    ApiResult<PageInfo<SysUserVo>> list(SysUserQuery qo);
 
     /**
      * 新增用户
      *
      * @param dto 用户dto
      * @return String
-     * @throws Exception e
      */
-    ApiResult<String> save(SysUserDto dto) throws Exception;
+    ApiResult<String> save(SysUserDto dto);
 
     /**
      * 获取用户信息
      *
      * @param id id
      * @return SysUserVo
-     * @throws Exception e
      */
-    ApiResult<SysUserVo> get(String id) throws Exception;
+    ApiResult<SysUserVo> get(String id);
 
     /**
      * 修改用户
      *
      * @param dto 用户dto
      * @return String
-     * @throws Exception e
      */
-    ApiResult<String> update(SysUserDto dto) throws Exception;
+    ApiResult<String> update(SysUserDto dto);
 
     /**
      * 删除用户
      *
      * @param id 用户id
      * @return String
-     * @throws Exception e
      */
-    ApiResult<String> delete(String id) throws Exception;
+    ApiResult<String> delete(String id);
 }

@@ -26,8 +26,6 @@ public class BeanEntity {
     @TableField(fill = FieldFill.UPDATE)
     private LocalDateTime updateTime;
 
-    private Boolean isDisable;
-
     @TableLogic
     private Boolean isDeleted;
 

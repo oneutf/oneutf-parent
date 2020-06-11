@@ -19,7 +19,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler({Exception.class})
     public ApiResult<String> handleBaseException(Exception e) {
-        log.info("未知异常");
+        log.info(e.getMessage(), e);
         return failure("未知异常");
     }
 }
