@@ -1,6 +1,6 @@
-package com.oneutf.sys.model.vo;
+package com.oneutf.sys.model.dto;
 
-import com.oneutf.bean.model.vo.BeanVo;
+import com.oneutf.bean.model.dto.BeanDto;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -11,9 +11,10 @@ import lombok.ToString;
 @Data
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class SysRoleVo extends BeanVo {
+public class SysUserRoleRefDto extends BeanDto {
 
-    private String code;
+    private String roleId;
 
-    private String name;
+    private String userId;
+
 }

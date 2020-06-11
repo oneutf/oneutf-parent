@@ -11,9 +11,10 @@ import lombok.ToString;
 @Data
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class SysRoleVo extends BeanVo {
+public class SysUserRoleRefVo extends BeanVo {
 
-    private String code;
+    private String roleId;
 
-    private String name;
+    private String userId;
+
 }

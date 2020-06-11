@@ -4,9 +4,12 @@ import com.github.pagehelper.PageInfo;
 import com.oneutf.bean.result.ApiResult;
 import com.oneutf.bean.service.BeanService;
 import com.oneutf.sys.model.dto.SysUserDto;
+import com.oneutf.sys.model.dto.SysUserRoleRefDto;
 import com.oneutf.sys.model.entity.SysUser;
 import com.oneutf.sys.model.query.SysUserQuery;
 import com.oneutf.sys.model.vo.SysUserVo;
+
+import java.util.List;
 
 /**
  * @author oneutf
@@ -53,4 +56,13 @@ public interface SysUserService extends BeanService<SysUser> {
      * @return String
      */
     ApiResult<String> delete(String id);
+
+    /**
+     * 维护用户角色关联表
+     *
+     * @param sysUserRoleRefDtos
+     * @param userId
+     * @return
+     */
+    ApiResult<String> userRoleRef(List<SysUserRoleRefDto> sysUserRoleRefDtos, String userId);
 }

@@ -6,11 +6,15 @@ import com.oneutf.bean.result.ApiResult;
 import com.oneutf.bean.service.impl.BeanServiceImpl;
 import com.oneutf.sys.mapper.SysUserMapper;
 import com.oneutf.sys.model.dto.SysUserDto;
+import com.oneutf.sys.model.dto.SysUserRoleRefDto;
 import com.oneutf.sys.model.entity.SysUser;
+import com.oneutf.sys.model.entity.SysUserRoleRef;
 import com.oneutf.sys.model.query.SysUserQuery;
 import com.oneutf.sys.model.vo.SysUserVo;
+import com.oneutf.sys.service.SysUserRoleRefService;
 import com.oneutf.sys.service.SysUserService;
 import com.oneutf.util.BeanUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,6 +27,9 @@ import static com.oneutf.bean.result.ApiResultUtils.success;
  */
 @Service
 public class SysUserServiceImpl extends BeanServiceImpl<SysUserMapper, SysUser> implements SysUserService {
+
+    @Autowired
+    private SysUserRoleRefService sysUserRoleRefService;
 
     @Override
     public ApiResult<PageInfo<SysUserVo>> list(SysUserQuery qo){
@@ -58,5 +65,18 @@ public class SysUserServiceImpl extends BeanServiceImpl<SysUserMapper, SysUser> 
     public ApiResult<String> delete(String id) {
         this.removeById(id);
         return success("删除成功");
+    }
+
+    @Override
+    public ApiResult<String> userRoleRef(List<SysUserRoleRefDto> sysUserRoleRefDtos, String userId) {
+        // 删除旧数据
+        sysUserRoleRefService.remove(sysUserRoleRefService.lambdaQuery().eq(SysUserRoleRef::getUserId, userId));
+
+        // 新增新数据
+
+
+
+
+        return null;
     }
 }
