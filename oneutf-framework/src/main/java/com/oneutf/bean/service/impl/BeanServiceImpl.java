@@ -14,14 +14,6 @@ import org.springframework.transaction.annotation.Transactional;
 public class BeanServiceImpl<M extends BeanMapper<E>, E extends BeanEntity> extends ServiceImpl<M, E> implements BeanService<E> {
 
     @Override
-    public boolean save(E entity) {
-        if(super.save(entity)){
-            return true;
-        }
-        return false;
-    }
-
-    @Override
     public String validate(E e) {
         return null;
     }

@@ -28,9 +28,6 @@ import static com.oneutf.bean.result.ApiResultUtils.success;
 @Service
 public class SysUserServiceImpl extends BeanServiceImpl<SysUserMapper, SysUser> implements SysUserService {
 
-    @Autowired
-    private SysUserRoleRefService sysUserRoleRefService;
-
     @Override
     public ApiResult<PageInfo<SysUserVo>> list(SysUserQuery qo){
         PageHelper.startPage(qo.getPage(), qo.getLimit());
@@ -67,16 +64,4 @@ public class SysUserServiceImpl extends BeanServiceImpl<SysUserMapper, SysUser> 
         return success("删除成功");
     }
 
-    @Override
-    public ApiResult<String> userRoleRef(List<SysUserRoleRefDto> sysUserRoleRefDtos, String userId) {
-        // 删除旧数据
-        sysUserRoleRefService.remove(sysUserRoleRefService.lambdaQuery().eq(SysUserRoleRef::getUserId, userId));
-
-        // 新增新数据
-
-
-
-
-        return null;
-    }
 }

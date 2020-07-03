@@ -57,12 +57,4 @@ public interface SysUserService extends BeanService<SysUser> {
      */
     ApiResult<String> delete(String id);
 
-    /**
-     * 维护用户角色关联表
-     *
-     * @param sysUserRoleRefDtos
-     * @param userId
-     * @return
-     */
-    ApiResult<String> userRoleRef(List<SysUserRoleRefDto> sysUserRoleRefDtos, String userId);
 }

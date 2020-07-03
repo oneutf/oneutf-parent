@@ -1,6 +1,7 @@
 package com.oneutf.sys;
 
 import com.oneutf.AppStart;
+import com.oneutf.sys.model.entity.SysUser;
 import com.oneutf.sys.service.SysUserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,8 +18,9 @@ public class SysUserTest {
 
     @Test
     public void demo(){
-//        SysUser sysUser = new SysUser();
-//        sysUserService.save(sysUser);
-        sysUserService.removeById("35fbbacd32cae2e252232f0288af7345");
+        SysUser user = sysUserService.getById("1365ca30ba64234a6603b5fe8c3bfba6");
+        System.out.println(user.getName());
+        String name = user.getName();
+
     }
 }
