@@ -32,7 +32,6 @@ public class SysUserController {
 
     @GetMapping("get/{id}")
     public ApiResult<SysUserVo> get(@PathVariable("id") String id) {
-        System.out.println(sysUserService.get(id).getData().getName());
         return sysUserService.get(id);
     }
 

@@ -32,8 +32,8 @@ public class SysUserServiceImpl extends BeanServiceImpl<SysUserMapper, SysUser> 
     public ApiResult<PageInfo<SysUserVo>> list(SysUserQuery qo){
         PageHelper.startPage(qo.getPage(), qo.getLimit());
 
-        List<SysUser> entitys = lambdaQuery().list();
-        List<SysUserVo> vos = BeanUtil.voTransfer(entitys, SysUserVo.class);
+        List<SysUser> entityList = lambdaQuery().list();
+        List<SysUserVo> vos = BeanUtil.voTransfer(entityList, SysUserVo.class);
         PageInfo<SysUserVo> pageInfo = new PageInfo<>(vos);
         return success(pageInfo);
     }
