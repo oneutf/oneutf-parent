@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
  * @description: 封装类
  */
 @Transactional(rollbackFor = Exception.class)
-public class BeanServiceImpl<M extends BeanMapper<E>, E extends BeanEntity> extends ServiceImpl<M, E> implements BeanService<E> {
+public class BeanServiceImpl<M extends BeanMapper<E>, E> extends ServiceImpl<M, E> implements BeanService<E> {
 
     @Override
     public String validate(E e) {

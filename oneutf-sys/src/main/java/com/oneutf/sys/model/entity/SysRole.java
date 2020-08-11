@@ -2,6 +2,7 @@ package com.oneutf.sys.model.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.oneutf.bean.model.entity.BeanEntity;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -10,7 +11,7 @@ import lombok.ToString;
  * @author oneutf
  * @description: role实体类
  */
-@TableName("sys_user")
+@TableName("sys_role")
 @Data
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)

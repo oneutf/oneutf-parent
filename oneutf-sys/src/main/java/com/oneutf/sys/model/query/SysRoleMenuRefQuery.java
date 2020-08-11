@@ -9,10 +9,9 @@ import lombok.ToString;
  * @author oneutf
  */
 @Data
-public class SysUserRoleRefQuery {
+public class SysRoleMenuRefQuery {
 
     private String roleId;
 
-    private String userId;
-
+    private String menuId;
 }

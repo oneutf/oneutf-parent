@@ -6,7 +6,7 @@ import com.oneutf.bean.model.entity.BeanEntity;
 /**
  * @author oneutf
  */
-public interface BeanService<E extends BeanEntity> extends IService<E> {
+public interface BeanService<E> extends IService<E> {
 
     /**
      * 封装校验操作

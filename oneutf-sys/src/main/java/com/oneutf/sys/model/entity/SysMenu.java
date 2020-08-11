@@ -9,12 +9,17 @@ import lombok.ToString;
 /**
  * @author oneutf
  */
-@TableName("user_role_ref")
+@TableName("sys_menu")
 @Data
-public class SysUserRoleRef{
+@ToString(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
+public class SysMenu extends BeanEntity {
 
-    private String roleId;
+    private String code;
 
-    private String userId;
+    private String name;
 
+    private String url;
+
+    private String pid;
 }

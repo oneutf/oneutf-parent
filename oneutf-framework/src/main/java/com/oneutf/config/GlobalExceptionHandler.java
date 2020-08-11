@@ -20,6 +20,6 @@ public class GlobalExceptionHandler {
     @ExceptionHandler({Exception.class})
     public ApiResult<String> handleBaseException(Exception e) {
         log.info(e.getMessage(), e);
-        return failure("未知异常");
+        return failure(e.getMessage());
     }
 }

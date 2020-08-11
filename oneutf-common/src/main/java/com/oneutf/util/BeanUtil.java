@@ -42,7 +42,7 @@ public class BeanUtil {
      * @param source 源
      * @param target 目标
      */
-    public static void copyProperties(Object source, Object target) {
+    private static void copyProperties(Object source, Object target) {
         BeanUtils.copyProperties(source, target);
     }
 

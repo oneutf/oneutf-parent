@@ -9,9 +9,7 @@ import lombok.ToString;
  * @author oneutf
  */
 @Data
-@ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
-public class SysUserRoleRefVo extends BeanVo {
+public class SysUserRoleRefVo {
 
     private String roleId;
 

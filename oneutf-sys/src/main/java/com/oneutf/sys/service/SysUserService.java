@@ -8,6 +8,7 @@ import com.oneutf.sys.model.dto.SysUserRoleRefDto;
 import com.oneutf.sys.model.entity.SysUser;
 import com.oneutf.sys.model.query.SysUserQuery;
 import com.oneutf.sys.model.vo.SysUserVo;
+import org.springframework.security.core.userdetails.UserDetailsService;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ import java.util.List;
  * @author oneutf
  * @description: user接口类
  */
-public interface SysUserService extends BeanService<SysUser> {
+public interface SysUserService extends BeanService<SysUser>, UserDetailsService{
 
     /**
      * 分页查询

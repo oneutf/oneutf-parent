@@ -9,12 +9,13 @@ import lombok.ToString;
 /**
  * @author oneutf
  */
-@TableName("user_role_ref")
+@TableName("sys_role_menu_ref")
 @Data
-public class SysUserRoleRef{
+public class SysRoleMenuRef {
 
     private String roleId;
 
-    private String userId;
+    private String menuId;
+
 
 }
