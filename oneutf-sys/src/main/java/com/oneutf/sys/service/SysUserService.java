@@ -4,13 +4,10 @@ import com.github.pagehelper.PageInfo;
 import com.oneutf.bean.result.ApiResult;
 import com.oneutf.bean.service.BeanService;
 import com.oneutf.sys.model.dto.SysUserDto;
-import com.oneutf.sys.model.dto.SysUserRoleRefDto;
 import com.oneutf.sys.model.entity.SysUser;
 import com.oneutf.sys.model.query.SysUserQuery;
 import com.oneutf.sys.model.vo.SysUserVo;
 import org.springframework.security.core.userdetails.UserDetailsService;
-
-import java.util.List;
 
 /**
  * @author oneutf

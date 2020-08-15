@@ -18,11 +18,4 @@ public interface SysRoleService extends BeanService<SysRole> {
      * @return String
      */
     ApiResult<String> save(SysRoleDto dto);
-
-    /**
-     * 获取用户关联的角色
-     * @param userId 用户id
-     * @return
-     */
-    ApiResult<List<SysRoleDto>> listUserRole(String userId);
 }

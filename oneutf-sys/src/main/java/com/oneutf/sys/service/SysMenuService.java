@@ -12,11 +12,4 @@ import java.util.List;
  * @author oneutf
  */
 public interface SysMenuService extends BeanService<SysMenu> {
-
-    /**
-     * 获取角色关联菜单
-     * @param roleId 角色id
-     * @return
-     */
-    ApiResult<List<SysMenuDto>> listRoleMenu(String roleId);
 }

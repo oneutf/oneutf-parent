@@ -1,36 +1,25 @@
 package com.oneutf.sys.service.impl;
 
+import cn.hutool.core.lang.Assert;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.oneutf.bean.result.ApiResult;
 import com.oneutf.bean.service.impl.BeanServiceImpl;
 import com.oneutf.sys.mapper.SysUserMapper;
-import com.oneutf.sys.model.dto.SysMenuDto;
-import com.oneutf.sys.model.dto.SysRoleDto;
 import com.oneutf.sys.model.dto.SysUserDto;
-import com.oneutf.sys.model.dto.SysUserRoleRefDto;
-import com.oneutf.sys.model.entity.SysRole;
 import com.oneutf.sys.model.entity.SysUser;
-import com.oneutf.sys.model.entity.SysUserRoleRef;
 import com.oneutf.sys.model.query.SysUserQuery;
 import com.oneutf.sys.model.vo.SysUserVo;
 import com.oneutf.sys.service.SysMenuService;
 import com.oneutf.sys.service.SysRoleService;
-import com.oneutf.sys.service.SysUserRoleRefService;
 import com.oneutf.sys.service.SysUserService;
 import com.oneutf.util.BeanUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import org.springframework.util.Assert;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
-import java.util.Set;
-import java.util.stream.Collectors;
 
 import static com.oneutf.bean.result.ApiResultUtils.success;
 
@@ -87,27 +76,7 @@ public class SysUserServiceImpl extends BeanServiceImpl<SysUserMapper, SysUser> 
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         // 从数据库中搜索用户
         SysUser entity = lambdaQuery().eq(SysUser::getName, username).one();
-        Assert.notNull(entity, "该用户不存在");
-        SysUserDto sysUserDto = BeanUtil.copyProperties(entity, SysUserDto.class);
-
-        // 权限赋值
-        List<SysRoleDto> sysRoleDtos = sysRoleService.listUserRole(entity.getId()).getData();
-        Set<SysMenuDto> menuDtos = sysRoleDtos.stream().flatMap(sysRoleDto -> {
-            List<SysMenuDto> sysMenuDtos = sysMenuService.listRoleMenu(sysRoleDto.getId()).getData();
-            return sysMenuDtos.stream();
-        }).collect(Collectors.toSet());
-
-        List<String> collect = menuDtos.stream().map(
-                sysMenuDto -> sysMenuDto.getUrl()
-        ).collect(Collectors.toList());
-
-        sysUserDto.setAuthorities(
-                AuthorityUtils.createAuthorityList(
-                        menuDtos.stream().map(
-                                sysMenuDto -> sysMenuDto.getUrl()
-                        ).collect(Collectors.joining())
-                )
-        );
-        return sysUserDto;
+        Assert.notNull(entity, "用户不存在");
+        return BeanUtil.copyProperties(entity, SysUserDto.class);
     }
 }
