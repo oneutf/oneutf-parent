@@ -7,11 +7,7 @@ import com.oneutf.sys.model.dto.SysRoleDto;
 import com.oneutf.sys.model.entity.SysRole;
 import com.oneutf.sys.service.SysRoleService;
 import com.oneutf.util.BeanUtil;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
-import java.util.stream.Collectors;
 
 import static com.oneutf.bean.result.ApiResultUtils.success;
 

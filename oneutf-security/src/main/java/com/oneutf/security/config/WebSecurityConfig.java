@@ -1,6 +1,5 @@
 package com.oneutf.security.config;
 
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -11,13 +10,13 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
  * @desc security 安全规则配置
  */
 @Slf4j
-@EnableWebSecurity
+@EnableWebSecurity(debug = true)
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests().anyRequest().permitAll();
+        http.authorizeRequests().anyRequest().anonymous().and().csrf().disable();
     }
 
 }

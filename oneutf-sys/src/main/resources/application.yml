@@ -10,8 +10,5 @@ mybatis-plus:
       logic-delete-field: isDeleted
       logic-delete-value: 1
       logic-not-delete-value: 0
-security:
-  oauth2:
-    client:
-      client-id: client
-      client-secret: client
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

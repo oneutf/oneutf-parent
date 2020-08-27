@@ -5,8 +5,6 @@ import com.oneutf.bean.service.BeanService;
 import com.oneutf.sys.model.dto.SysRoleDto;
 import com.oneutf.sys.model.entity.SysRole;
 
-import java.util.List;
-
 /**
  * @author oneutf
  */
