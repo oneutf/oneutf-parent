@@ -6,8 +6,6 @@ import com.oneutf.sys.model.entity.SysMenu;
 import com.oneutf.sys.service.SysMenuService;
 import org.springframework.stereotype.Service;
 
-import static com.oneutf.bean.result.ApiResultUtils.success;
-
 /**
  * @author oneutf
  */

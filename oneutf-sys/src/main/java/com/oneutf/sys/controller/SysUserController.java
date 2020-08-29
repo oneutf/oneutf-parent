@@ -1,47 +1,51 @@
 package com.oneutf.sys.controller;
 
 import com.github.pagehelper.PageInfo;
-import com.oneutf.bean.result.ApiResult;
+import com.oneutf.bean.result.Result;
 import com.oneutf.sys.model.dto.SysUserDto;
 import com.oneutf.sys.model.query.SysUserQuery;
 import com.oneutf.sys.model.vo.SysUserVo;
 import com.oneutf.sys.service.SysUserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import static com.oneutf.bean.result.Result.failed;
+import static com.oneutf.bean.result.Result.success;
+
 /**
  * @author oneutf
- * @description: user控制器
+ * @desc user控制器
  */
 @RestController
 @RequestMapping("sys/user")
+@RequiredArgsConstructor
 public class SysUserController {
 
-    @Autowired
-    private SysUserService sysUserService;
+    private final SysUserService sysUserService;
 
     @PostMapping("list")
-    public ApiResult<PageInfo<SysUserVo>> list(SysUserQuery qo) {
-        return sysUserService.list(qo);
+    public Result<?> list(SysUserQuery qo) {
+        return success(sysUserService.list(qo));
     }
 
     @PostMapping("save")
-    public ApiResult<String> save(SysUserDto dto) {
-        return sysUserService.save(dto);
+    public Result<?> save(SysUserDto dto) {
+        return sysUserService.save(dto) ? success() : failed();
     }
 
     @GetMapping("get/{id}")
-    public ApiResult<SysUserVo> get(@PathVariable("id") String id) {
-        return sysUserService.get(id);
+    public Result<?> get(@PathVariable("id") String id) {
+        return success(sysUserService.get(id));
     }
 
     @PostMapping("update")
-    public ApiResult<String> update(SysUserDto dto) {
-        return sysUserService.update(dto);
+    public Result<?> update(SysUserDto dto) {
+        return sysUserService.update(dto) ? success() : failed();
     }
 
     @GetMapping("delete/{id}")
-    public ApiResult<String> delete(@PathVariable("id") String id) {
-        return sysUserService.delete(id);
+    public Result<?> delete(@PathVariable("id") String id) {
+        return sysUserService.delete(id) ? success() : failed();
     }
 }
