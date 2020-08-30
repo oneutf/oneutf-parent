@@ -48,4 +48,10 @@ public class SysUserController {
     public Result<?> delete(@PathVariable("id") String id) {
         return sysUserService.delete(id) ? success() : failed();
     }
+
+    @PostMapping("login")
+    public Result<?> login(SysUserDto dto) {
+        System.out.println(dto);
+        return success(dto);
+    }
 }
