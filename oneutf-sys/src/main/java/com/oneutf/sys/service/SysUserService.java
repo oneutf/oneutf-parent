@@ -6,14 +6,13 @@ import com.oneutf.sys.model.dto.SysUserDto;
 import com.oneutf.sys.model.entity.SysUser;
 import com.oneutf.sys.model.query.SysUserQuery;
 import com.oneutf.sys.model.vo.SysUserVo;
-import org.springframework.security.core.userdetails.UserDetailsService;
 
 /**
  * @author oneutf
  * @desc user接口类
  * @date /rq
  */
-public interface SysUserService extends BeanService<SysUser>, UserDetailsService {
+public interface SysUserService extends BeanService<SysUser> {
 
     /**
      * 分页查询
@@ -30,13 +29,6 @@ public interface SysUserService extends BeanService<SysUser>, UserDetailsService
      * @return String
      */
     boolean save(SysUserDto dto);
-
-    /**
-     * 获取用户信息
-     * @param id id
-     * @return vo
-     */
-    SysUserVo get(String id);
 
     /**
      * 修改用户

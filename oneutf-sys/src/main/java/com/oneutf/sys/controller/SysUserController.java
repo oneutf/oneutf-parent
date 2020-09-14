@@ -18,39 +18,30 @@ import static com.oneutf.bean.result.Result.success;
  * @desc user控制器
  */
 @RestController
-@RequestMapping("/sys/user")
+@RequestMapping("sys/user")
 @RequiredArgsConstructor
 public class SysUserController {
 
     private final SysUserService sysUserService;
 
-    @PostMapping("/list")
+    @GetMapping
     public Result<PageInfo<SysUserVo>> list(SysUserQuery qo) {
         return success(sysUserService.list(qo));
     }
 
-    @PostMapping("/save")
+    @PostMapping
     public Result<ResultCode> save(SysUserDto dto) {
         return sysUserService.save(dto) ? success() : failed();
     }
 
-    @GetMapping("/get/{id}")
-    public Result<SysUserVo> get(@PathVariable("id") String id) {
-        return success(sysUserService.get(id));
-    }
-
-    @PostMapping("/update")
+    @PutMapping
     public Result<SysUserVo> update(SysUserDto dto) {
         return sysUserService.update(dto) ? success() : failed();
     }
 
-    @GetMapping("/delete/{id}")
-    public Result<SysUserVo> delete(@PathVariable("id") String id) {
+    @DeleteMapping
+    public Result<SysUserVo> delete(String id) {
         return sysUserService.delete(id) ? success() : failed();
     }
 
-    @PostMapping("/login")
-    public Result<SysUserDto> login(SysUserDto dto) {
-        return success(dto);
-    }
 }

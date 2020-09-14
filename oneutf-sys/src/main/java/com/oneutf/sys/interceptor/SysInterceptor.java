@@ -11,11 +11,10 @@ import javax.servlet.http.HttpServletResponse;
  * @desc sys模块拦截器
  */
 @RequiredArgsConstructor
-
 public class SysInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        return false;
+        return true;
     }
 }

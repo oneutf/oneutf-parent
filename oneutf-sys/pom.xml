@@ -22,10 +22,5 @@
             <artifactId>oneutf-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-        <dependency>
-            <groupId>com.oneutf</groupId>
-            <artifactId>oneutf-security</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
     </dependencies>
 </project>

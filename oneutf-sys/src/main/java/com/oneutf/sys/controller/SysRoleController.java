@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @author oneutf
  */
 @RestController
-@RequestMapping("sys/role")
+@RequestMapping("/sys/role")
 public class SysRoleController {
 }
