@@ -1,5 +1,6 @@
 package com.oneutf.sys.controller;
 
+import com.oneutf.bean.controller.BeanController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -8,5 +9,5 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/sys/role")
-public class SysRoleController {
+public class SysRoleController extends BeanController {
 }

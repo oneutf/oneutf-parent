@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * @author oneutf
- * @description: 封裝bean
+ * @desc: 封裝bean
  */
 public class BeanUtil {
 

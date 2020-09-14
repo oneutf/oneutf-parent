@@ -75,4 +75,13 @@
         </plugins>
     </build>
 
+    <!--阿里云仓库地址-->
+    <repositories>
+        <repository>
+            <id>aliyun</id>
+            <name>aliyun</name>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </repository>
+    </repositories>
+
 </project>
