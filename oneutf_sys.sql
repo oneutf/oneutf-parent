@@ -11,7 +11,7 @@
  Target Server Version : 50727
  File Encoding         : 65001
 
- Date: 11/08/2020 17:52:51
+ Date: 14/09/2020 20:01:57
 */
 
 SET NAMES utf8mb4;
@@ -94,7 +94,7 @@ CREATE TABLE `sys_user`  (
 -- ----------------------------
 -- Records of sys_user
 -- ----------------------------
-INSERT INTO `sys_user` VALUES ('35fbbacd32cae2e252232f0288af7345', 'one', '$2a$10$4VaVtb3Jc2t8tWZz2iptS.sxHGkT6i5JOHyx8lhx83VVwtkmUJNQW', NULL, '2020-06-03 18:10:45', NULL, NULL, b'0');
+INSERT INTO `sys_user` VALUES ('35fbbacd32cae2e252232f0288af7345', 'one', '123456', NULL, '2020-06-03 18:10:45', NULL, NULL, b'0');
 
 -- ----------------------------
 -- Table structure for user_role_ref
