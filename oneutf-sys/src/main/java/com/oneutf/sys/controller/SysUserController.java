@@ -27,7 +27,6 @@ public class SysUserController extends BeanController {
 
     @GetMapping
     public Result<PageInfo<SysUserVo>> list(SysUserQuery qo) {
-        System.out.println(qo);
         return success(sysUserService.list(qo));
     }
 
