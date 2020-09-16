@@ -19,7 +19,7 @@ import static com.oneutf.bean.result.Result.success;
  * @desc user控制器
  */
 @RestController
-@RequestMapping("sys/user")
+@RequestMapping("/sys/user")
 @RequiredArgsConstructor
 public class SysUserController extends BeanController {
 
@@ -27,17 +27,16 @@ public class SysUserController extends BeanController {
 
     @GetMapping
     public Result<PageInfo<SysUserVo>> list(SysUserQuery qo) {
-        System.out.println(qo);
         return success(sysUserService.list(qo));
     }
 
     @PostMapping
-    public Result<ResultCode> save(SysUserDto dto) {
+    public Result<ResultCode> save(@RequestBody SysUserDto dto) {
         return sysUserService.save(dto) ? success() : failed();
     }
 
     @PutMapping
-    public Result<SysUserVo> update(SysUserDto dto) {
+    public Result<SysUserVo> update(@RequestBody SysUserDto dto) {
         return sysUserService.update(dto) ? success() : failed();
     }
 

@@ -19,4 +19,6 @@ public class BeanDto {
     private String updateBy;
 
     private LocalDateTime updateTime;
+
+    private Integer version;
 }

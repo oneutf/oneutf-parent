@@ -35,10 +35,6 @@ public class Result<T> {
                 .setMsg(BeanResultCode.SUCCESS.getMessage());
     }
 
-    public static <T> Result<T> success(String msg) {
-        return new Result<T>().setCode(BeanResultCode.SUCCESS.getCode()).setMsg(msg);
-    }
-
     public static <T> Result<T> success(T data, String msg) {
         return new Result<T>().setCode(BeanResultCode.SUCCESS.getCode()).setData(data)
                 .setMsg(msg);

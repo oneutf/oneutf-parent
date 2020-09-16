@@ -29,4 +29,7 @@ public class BeanEntity {
     @TableLogic
     private Boolean isDeleted;
 
+    @Version
+    private Integer version;
+
 }
