@@ -10,7 +10,7 @@ import com.oneutf.sys.model.entity.SysUser;
 import com.oneutf.sys.model.query.SysUserQuery;
 import com.oneutf.sys.model.vo.SysUserVo;
 import com.oneutf.sys.service.SysUserService;
-import com.oneutf.util.BeanUtil;
+import com.oneutf.util.BeanUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -31,18 +31,18 @@ public class SysUserServiceImpl extends BeanServiceImpl<SysUserMapper, SysUser> 
         List<SysUser> entityList = lambdaQuery()
                 .eq(StrUtil.isNotBlank(qo.getId()), SysUser::getId, qo.getId())
                 .list();
-        List<SysUserVo> vos = BeanUtil.voTransfer(entityList, SysUserVo.class);
+        List<SysUserVo> vos = BeanUtils.transfer(entityList, SysUserVo.class);
         return new PageInfo<>(vos);
     }
 
     @Override
     public boolean save(SysUserDto dto) {
-        return this.save(BeanUtil.copyProperties(dto, SysUser.class));
+        return this.save(BeanUtils.copyProperties(dto, SysUser.class));
     }
 
     @Override
     public boolean update(SysUserDto dto) {
-        SysUser entity = BeanUtil.copyProperties(dto, SysUser.class);
+        SysUser entity = BeanUtils.copyProperties(dto, SysUser.class);
         return this.updateById(entity);
     }
 

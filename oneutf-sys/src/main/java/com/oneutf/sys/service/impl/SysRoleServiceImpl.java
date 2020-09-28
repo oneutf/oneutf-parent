@@ -5,7 +5,7 @@ import com.oneutf.sys.mapper.SysRoleMapper;
 import com.oneutf.sys.model.dto.SysRoleDto;
 import com.oneutf.sys.model.entity.SysRole;
 import com.oneutf.sys.service.SysRoleService;
-import com.oneutf.util.BeanUtil;
+import com.oneutf.util.BeanUtils;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,7 +16,7 @@ public class SysRoleServiceImpl extends BeanServiceImpl<SysRoleMapper, SysRole> 
 
     @Override
     public boolean save(SysRoleDto dto) {
-        SysRole sysRole = BeanUtil.copyProperties(dto, SysRole.class);
+        SysRole sysRole = BeanUtils.copyProperties(dto, SysRole.class);
         return this.save(sysRole);
     }
 

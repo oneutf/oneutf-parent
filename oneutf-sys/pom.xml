@@ -15,12 +15,15 @@
         <dependency>
             <groupId>com.oneutf</groupId>
             <artifactId>oneutf-framework</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>com.oneutf</groupId>
             <artifactId>oneutf-common</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 </project>
