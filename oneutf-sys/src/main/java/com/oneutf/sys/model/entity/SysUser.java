@@ -10,7 +10,7 @@ import java.io.Serializable;
 
 /**
  * @author oneutf
- * @description: user实体类
+ * @desc user实体类
  */
 @TableName("sys_user")
 @Data

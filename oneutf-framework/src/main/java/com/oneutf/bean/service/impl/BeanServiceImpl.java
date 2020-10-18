@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @author oneutf
- * @description: 封装类
+ * @desc 封装类
  */
 @Transactional(rollbackFor = Exception.class)
 public class BeanServiceImpl<M extends BeanMapper<E>, E> extends ServiceImpl<M, E> implements BeanService<E> {

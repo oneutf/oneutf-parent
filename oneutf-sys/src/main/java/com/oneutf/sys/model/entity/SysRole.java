@@ -9,7 +9,7 @@ import lombok.ToString;
 
 /**
  * @author oneutf
- * @description: role实体类
+ * @desc role实体类
  */
 @TableName("sys_role")
 @Data
