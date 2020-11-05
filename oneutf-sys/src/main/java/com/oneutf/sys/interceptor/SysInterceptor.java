@@ -19,8 +19,8 @@ public class SysInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        PrintWriter writer = response.getWriter();
-        writer.write(JSONUtil.toJsonPrettyStr(failed()));
-        return false;
+//        PrintWriter writer = response.getWriter();
+//        writer.write(JSONUtil.toJsonPrettyStr(failed()));
+        return true;
     }
 }
