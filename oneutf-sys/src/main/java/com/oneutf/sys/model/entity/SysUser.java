@@ -2,9 +2,7 @@ package com.oneutf.sys.model.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.oneutf.bean.model.entity.BeanEntity;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.*;
 
 import java.io.Serializable;
 
@@ -13,12 +11,9 @@ import java.io.Serializable;
  * @desc user实体类
  */
 @TableName("sys_user")
-@Data
-@ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
-public class SysUser extends BeanEntity implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+@Getter
+@Setter
+public class SysUser extends BeanEntity {
 
     private String name;
 

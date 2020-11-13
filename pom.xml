@@ -7,6 +7,7 @@
         <module>oneutf-framework</module>
         <module>oneutf-common</module>
         <module>oneutf-sys</module>
+        <module>oneutf-cache</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -105,6 +106,11 @@
             <dependency>
                 <groupId>com.oneutf</groupId>
                 <artifactId>oneutf-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.oneutf</groupId>
+                <artifactId>oneutf-cache</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>

@@ -8,6 +8,10 @@ spring:
     static-path-pattern: /static/**
   resources:
     static-locations: file:C:/Users/Administrator/Pictures/
+#redis配置
+  redis:
+    host: 114.116.254.73
+    password: 123456
 mybatis-plus:
   global-config:
     db-config:

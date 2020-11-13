@@ -49,6 +49,12 @@
                 </exclusion>
             </exclusions>
         </dependency>
+
+        <!--自制工具包-->
+        <dependency>
+            <groupId>com.oneutf</groupId>
+            <artifactId>oneutf-cache</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
