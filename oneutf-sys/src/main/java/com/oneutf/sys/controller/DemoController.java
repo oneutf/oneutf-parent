@@ -26,7 +26,7 @@ import java.io.IOException;
 @RequiredArgsConstructor
 public class DemoController extends BeanController {
 
-    private final RedisTemplate redisTemplate;
+    private final RedisTemplate<String, Object> redisTemplate;
 
     @RequestMapping(value = "/email", method = RequestMethod.POST)
     public String email(){
@@ -47,6 +47,9 @@ public class DemoController extends BeanController {
         sysUser.setName("1");
         sysUser.setPassword("312");
         redisTemplate.opsForValue().set("user",sysUser);
+        System.out.println(redisTemplate.opsForValue().get("user"));
+
+//        sysUser = (SysUser) redisTemplate.opsForValue().get("user");
         return "success";
     }
 }
