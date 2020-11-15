@@ -93,13 +93,6 @@
             </dependency>
 
             <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>4.13</version>
-                <scope>test</scope>
-            </dependency>
-
-            <dependency>
                 <groupId>com.oneutf</groupId>
                 <artifactId>oneutf-framework</artifactId>
                 <version>${project.version}</version>
