@@ -2,11 +2,11 @@ package com.oneutf.sys.controller;
 
 import cn.hutool.poi.excel.ExcelUtil;
 import com.oneutf.bean.controller.BeanController;
+import com.oneutf.cache.util.RedisUtils;
 import com.oneutf.sys.model.entity.SysUser;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.catalina.User;
-import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.cache.RedisCache;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -26,16 +26,18 @@ import java.io.IOException;
 @RequiredArgsConstructor
 public class DemoController extends BeanController {
 
-    private final RedisTemplate<String, Object> redisTemplate;
+    private final RedisUtils redisUtils;
+
+    private final RedisCache redisCache;
 
     @RequestMapping(value = "/email", method = RequestMethod.POST)
-    public String email(){
+    public String email() {
         return "这是主页";
     }
 
     @PostMapping(value = "/file")
     public String file(MultipartFile file) throws IOException {
-        ExcelUtil.readBySax(file.getInputStream(), 0, (a, b, c) ->{
+        ExcelUtil.readBySax(file.getInputStream(), 0, (a, b, c) -> {
             System.out.println(a + "===" + b + "===" + c);
         });
         return null;
@@ -44,12 +46,10 @@ public class DemoController extends BeanController {
     @PostMapping(value = "/redis")
     public String redis() {
         SysUser sysUser = new SysUser();
-        sysUser.setName("1");
-        sysUser.setPassword("312");
-        redisTemplate.opsForValue().set("user",sysUser);
-        System.out.println(redisTemplate.opsForValue().get("user"));
+        sysUser.setName("one");
+        sysUser.setPassword("hanhan");
+        redisCache.put("user", sysUser);
 
-//        sysUser = (SysUser) redisTemplate.opsForValue().get("user");
         return "success";
     }
 }
