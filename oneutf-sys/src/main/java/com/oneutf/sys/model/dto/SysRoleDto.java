@@ -1,20 +1,12 @@
 package com.oneutf.sys.model.dto;
 
-import com.oneutf.bean.model.dto.BeanDto;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author oneutf
  */
-@Data
-@ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
-public class SysRoleDto extends BeanDto {
-
-    private String code;
-
-    private String name;
-
+@Getter
+@Setter
+public class SysRoleDto {
 }

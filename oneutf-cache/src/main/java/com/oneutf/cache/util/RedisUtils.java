@@ -2,6 +2,7 @@ package com.oneutf.cache.util;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,14 +13,16 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class RedisUtils {
 
-    private final RedisTemplate<String, Object> redisTemplate;
+    private final RedisTemplate redisTemplate;
 
-    public void setCacheObject(String key, Object value) {
-        redisTemplate.opsForValue().set(key, value);
+    public <T> void setCacheObject(String key, T value) {
+        ValueOperations<String, T> opsForValue = redisTemplate.opsForValue();
+        opsForValue.set(key, value);
     }
 
-    public Object getCacheObject(String key) {
-        return redisTemplate.opsForValue().get(key);
+    public <T> T getCacheObject(String key) {
+        ValueOperations<String, T> opsForValue = redisTemplate.opsForValue();
+        return opsForValue.get(key);
     }
 
 }

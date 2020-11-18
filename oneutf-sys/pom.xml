@@ -12,17 +12,6 @@
     <artifactId>oneutf-sys</artifactId>
 
     <dependencies>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-test</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-        </dependency>
-
         <dependency>
             <groupId>com.oneutf</groupId>
             <artifactId>oneutf-framework</artifactId>
@@ -32,12 +21,12 @@
             <artifactId>oneutf-common</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-ooxml</artifactId>
+            <groupId>com.oneutf</groupId>
+            <artifactId>oneutf-cache</artifactId>
         </dependency>
         <dependency>
-            <groupId>xerces</groupId>
-            <artifactId>xercesImpl</artifactId>
+            <groupId>com.oneutf</groupId>
+            <artifactId>oneutf-file</artifactId>
         </dependency>
     </dependencies>
 </project>

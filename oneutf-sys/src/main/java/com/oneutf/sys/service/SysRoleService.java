@@ -1,6 +1,5 @@
 package com.oneutf.sys.service;
 
-import com.oneutf.bean.result.Result;
 import com.oneutf.bean.service.BeanService;
 import com.oneutf.sys.model.dto.SysRoleDto;
 import com.oneutf.sys.model.entity.SysRole;

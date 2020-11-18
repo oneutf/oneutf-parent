@@ -3,14 +3,13 @@ package com.oneutf.sys.controller;
 import cn.hutool.poi.excel.ExcelUtil;
 import com.oneutf.bean.controller.BeanController;
 import com.oneutf.cache.util.RedisUtils;
+import com.oneutf.sys.constant.enums.TestEnum;
 import com.oneutf.sys.model.entity.SysUser;
+import com.oneutf.sys.model.vo.DemoVo;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.redis.cache.RedisCache;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
@@ -27,8 +26,6 @@ import java.io.IOException;
 public class DemoController extends BeanController {
 
     private final RedisUtils redisUtils;
-
-    private final RedisCache redisCache;
 
     @RequestMapping(value = "/email", method = RequestMethod.POST)
     public String email() {
@@ -48,8 +45,18 @@ public class DemoController extends BeanController {
         SysUser sysUser = new SysUser();
         sysUser.setName("one");
         sysUser.setPassword("hanhan");
-        redisCache.put("user", sysUser);
-
+        redisUtils.setCacheObject("user", sysUser);
+        sysUser = redisUtils.getCacheObject("user");
+        System.out.println(sysUser);
         return "success";
     }
+
+    @GetMapping("/getDemoVo")
+    public DemoVo getDemoVo() {
+        DemoVo demoVo = new DemoVo();
+        demoVo.setTestEnum(TestEnum.SUCCESS);
+        return demoVo;
+    }
+
+
 }
