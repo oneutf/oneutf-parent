@@ -1,14 +1,13 @@
 package com.oneutf.sys.controller;
 
 import cn.hutool.poi.excel.ExcelUtil;
-import com.oneutf.bean.controller.BeanController;
+import com.oneutf.bean.controller.BaseController;
 import com.oneutf.cache.util.RedisUtils;
 import com.oneutf.sys.constant.enums.TestEnum;
 import com.oneutf.sys.model.entity.SysUser;
 import com.oneutf.sys.model.vo.DemoVo;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.data.redis.cache.RedisCache;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -23,7 +22,7 @@ import java.io.IOException;
 @RestController
 @RequestMapping(value = "/test")
 @RequiredArgsConstructor
-public class DemoController extends BeanController {
+public class DemoController extends BaseController {
 
     private final RedisUtils redisUtils;
 

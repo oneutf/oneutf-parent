@@ -1,7 +1,7 @@
 package com.oneutf.sys.controller;
 
 import com.github.pagehelper.PageInfo;
-import com.oneutf.bean.controller.BeanController;
+import com.oneutf.bean.controller.BaseController;
 import com.oneutf.bean.result.Result;
 import com.oneutf.bean.result.ResultCode;
 import com.oneutf.sys.model.dto.SysUserDto;
@@ -21,7 +21,7 @@ import static com.oneutf.bean.result.Result.success;
 @RestController
 @RequestMapping("/sys/user")
 @RequiredArgsConstructor
-public class SysUserController extends BeanController {
+public class SysUserController extends BaseController {
 
     private final SysUserService sysUserService;
 

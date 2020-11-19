@@ -1,6 +1,5 @@
 package com.oneutf.sys.interceptor;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -12,7 +11,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * @desc 注册拦截器配置
  */
 @Configuration
-@RequiredArgsConstructor
 public class SysInterceptorConfig implements WebMvcConfigurer {
 
     @Override
@@ -21,8 +19,8 @@ public class SysInterceptorConfig implements WebMvcConfigurer {
         registration.addPathPatterns("/**");
     }
 
-//    @Override
-//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-//        registry.addResourceHandler("/static/**").addResourceLocations("C:\\Users\\Administrator\\Pictures");
-//    }
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/files/**").addResourceLocations("file:///D:/file/");
+    }
 }
