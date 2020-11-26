@@ -9,6 +9,7 @@
         <module>oneutf-sys</module>
         <module>oneutf-cache</module>
         <module>oneutf-file</module>
+        <module>oneutf-thread-pool</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -112,7 +113,13 @@
                 <groupId>com.oneutf</groupId>
                 <artifactId>oneutf-file</artifactId>
                 <version>${project.version}</version>
-            </dependency><!-- 阿里JSON解析器 -->
+            </dependency>
+            <dependency>
+                <groupId>com.oneutf</groupId>
+                <artifactId>oneutf-thread-pool</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!-- 阿里JSON解析器 -->
             <dependency>
                 <groupId>com.alibaba</groupId>
                 <artifactId>fastjson</artifactId>
