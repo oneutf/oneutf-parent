@@ -1,23 +1,25 @@
 package com.oneutf.sys.model.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import com.oneutf.bean.model.entity.BeanEntity;
-import lombok.Builder;
+import com.oneutf.bean.model.entity.BeanDO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 /**
  * @author oneutf
- * @desc role实体类
  */
-@TableName("sys_role")
+@TableName("sys_menu")
 @Data
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class SysRole extends BeanEntity {
+public class SysMenuDO extends BeanDO {
 
     private String code;
 
     private String name;
+
+    private String url;
+
+    private String pid;
 }

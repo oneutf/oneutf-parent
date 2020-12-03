@@ -5,8 +5,7 @@ import com.oneutf.bean.controller.BaseController;
 import com.oneutf.bean.result.Result;
 import com.oneutf.bean.result.ResultCode;
 import com.oneutf.sys.model.dto.SysUserDto;
-import com.oneutf.sys.model.query.SysUserQuery;
-import com.oneutf.sys.model.vo.SysUserVo;
+import com.oneutf.sys.model.vo.SysUserVO;
 import com.oneutf.sys.service.SysUserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -26,8 +25,8 @@ public class SysUserController extends BaseController {
     private final SysUserService sysUserService;
 
     @GetMapping
-    public Result<PageInfo<SysUserVo>> list(SysUserQuery qo) {
-        return success(sysUserService.list(qo));
+    public Result<PageInfo<SysUserVO>> list() {
+        return success();
     }
 
     @PostMapping
@@ -36,12 +35,12 @@ public class SysUserController extends BaseController {
     }
 
     @PutMapping
-    public Result<SysUserVo> update(@RequestBody SysUserDto dto) {
+    public Result<SysUserVO> update(@RequestBody SysUserDto dto) {
         return sysUserService.update(dto) ? success() : failed();
     }
 
     @DeleteMapping
-    public Result<SysUserVo> delete(String id) {
+    public Result<SysUserVO> delete(String id) {
         return sysUserService.delete(id) ? success() : failed();
     }
 

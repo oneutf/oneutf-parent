@@ -1,6 +1,6 @@
 package com.oneutf.file.model.entity;
 
-import com.oneutf.bean.model.entity.BeanEntity;
+import com.oneutf.bean.model.entity.BeanDO;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -9,5 +9,5 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class File extends BeanEntity {
+public class FileDO extends BeanDO {
 }

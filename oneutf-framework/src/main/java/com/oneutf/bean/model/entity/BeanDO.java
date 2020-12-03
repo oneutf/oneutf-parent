@@ -1,8 +1,7 @@
 package com.oneutf.bean.model.entity;
 
-import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.annotation.*;
-import lombok.Data;
+import com.oneutf.bean.model.bean.Bean;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,7 +12,7 @@ import java.time.LocalDateTime;
  */
 @Getter
 @Setter
-public class BeanEntity {
+public class BeanDO extends Bean {
 
     @TableId(type = IdType.ASSIGN_UUID)
     private String id;
@@ -35,9 +34,4 @@ public class BeanEntity {
 
     @Version
     private Integer version;
-
-    @Override
-    public String toString() {
-        return JSON.toJSONString(this);
-    }
 }

@@ -1,5 +1,6 @@
 package com.oneutf.sys.model.vo;
 
+import com.oneutf.bean.model.bean.Bean;
 import com.oneutf.sys.constant.enums.TestEnum;
 import lombok.Getter;
 import lombok.Setter;
@@ -9,7 +10,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class DemoVo {
+public class DemoVO extends Bean {
 
     private TestEnum testEnum;
 }

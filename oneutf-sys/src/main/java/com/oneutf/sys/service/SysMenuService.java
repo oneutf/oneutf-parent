@@ -1,10 +1,10 @@
 package com.oneutf.sys.service;
 
 import com.oneutf.bean.service.BeanService;
-import com.oneutf.sys.model.entity.SysMenu;
+import com.oneutf.sys.model.entity.SysMenuDO;
 
 /**
  * @author oneutf
  */
-public interface SysMenuService extends BeanService<SysMenu> {
+public interface SysMenuService extends BeanService<SysMenuDO> {
 }

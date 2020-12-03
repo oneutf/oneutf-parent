@@ -4,8 +4,8 @@ import cn.hutool.poi.excel.ExcelUtil;
 import com.oneutf.bean.controller.BaseController;
 import com.oneutf.cache.util.RedisUtils;
 import com.oneutf.sys.constant.enums.TestEnum;
-import com.oneutf.sys.model.entity.SysUser;
-import com.oneutf.sys.model.vo.DemoVo;
+import com.oneutf.sys.model.entity.SysUserDO;
+import com.oneutf.sys.model.vo.DemoVO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -41,18 +41,18 @@ public class DemoController extends BaseController {
 
     @PostMapping(value = "/redis")
     public String redis() {
-        SysUser sysUser = new SysUser();
-        sysUser.setName("one");
-        sysUser.setPassword("hanhan");
-        redisUtils.setCacheObject("user", sysUser);
-        sysUser = redisUtils.getCacheObject("user");
-        System.out.println(sysUser);
+        SysUserDO sysUserDO = new SysUserDO();
+        sysUserDO.setName("one");
+        sysUserDO.setPassword("hanhan");
+        redisUtils.setCacheObject("user", sysUserDO);
+        sysUserDO = redisUtils.getCacheObject("user");
+        System.out.println(sysUserDO);
         return "success";
     }
 
     @GetMapping("/getDemoVo")
-    public DemoVo getDemoVo() {
-        DemoVo demoVo = new DemoVo();
+    public DemoVO getDemoVo() {
+        DemoVO demoVo = new DemoVO();
         demoVo.setTestEnum(TestEnum.SUCCESS);
         return demoVo;
     }

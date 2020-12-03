@@ -1,14 +1,17 @@
-package com.oneutf.bean.model.vo;
+package com.oneutf.bean.model.dto;
 
-import lombok.Data;
+import com.oneutf.bean.model.bean.Bean;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 /**
  * @author oneutf
  */
-@Data
-public class BeanVo {
+@Getter
+@Setter
+public class BeanDTO extends Bean {
 
     private String id;
 
@@ -19,4 +22,6 @@ public class BeanVo {
     private String updateBy;
 
     private LocalDateTime updateTime;
+
+    private Integer version;
 }

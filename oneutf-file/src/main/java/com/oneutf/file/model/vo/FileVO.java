@@ -1,5 +1,6 @@
 package com.oneutf.file.model.vo;
 
+import com.oneutf.bean.model.vo.BeanVO;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,7 +9,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class FileVo {
+public class FileVO extends BeanVO {
 
     private String name;
 

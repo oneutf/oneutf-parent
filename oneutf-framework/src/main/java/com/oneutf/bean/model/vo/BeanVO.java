@@ -1,18 +1,18 @@
-package com.oneutf.bean.model.query;
+package com.oneutf.bean.model.vo;
 
+import com.oneutf.bean.model.bean.Bean;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 /**
  * @author oneutf
  */
-@Data
-@ToString(callSuper = true)
-@EqualsAndHashCode(callSuper = true)
-public class BeanQuery extends PageQuery{
+@Getter
+@Setter
+public class BeanVO extends Bean {
 
     private String id;
 

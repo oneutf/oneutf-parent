@@ -1,17 +1,10 @@
 package com.oneutf.bean.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.oneutf.bean.model.entity.BeanEntity;
+import com.oneutf.bean.model.entity.BeanDO;
 
 /**
  * @author oneutf
  */
-public interface BeanService<E> extends IService<E> {
-
-    /**
-     * 封装校验操作
-     * @param e 实体类
-     * @return 消息
-     */
-    String validate(E e);
+public interface BeanService<T extends BeanDO> extends IService<T> {
 }

@@ -1,20 +1,13 @@
 package com.oneutf.sys.service.impl;
 
-import cn.hutool.core.util.StrUtil;
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
 import com.oneutf.bean.service.impl.BeanServiceImpl;
 import com.oneutf.sys.mapper.SysUserMapper;
 import com.oneutf.sys.model.dto.SysUserDto;
-import com.oneutf.sys.model.entity.SysUser;
-import com.oneutf.sys.model.query.SysUserQuery;
-import com.oneutf.sys.model.vo.SysUserVo;
+import com.oneutf.sys.model.entity.SysUserDO;
 import com.oneutf.sys.service.SysUserService;
 import com.oneutf.util.BeanUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 /**
  * @author oneutf
@@ -22,27 +15,16 @@ import java.util.List;
  */
 @Service
 @RequiredArgsConstructor
-public class SysUserServiceImpl extends BeanServiceImpl<SysUserMapper, SysUser> implements SysUserService {
-
-    @Override
-    public PageInfo<SysUserVo> list(SysUserQuery qo) {
-        PageHelper.startPage(qo.getPage(), qo.getLimit());
-
-        List<SysUser> entityList = lambdaQuery()
-                .eq(StrUtil.isNotBlank(qo.getId()), SysUser::getId, qo.getId())
-                .list();
-        List<SysUserVo> vos = BeanUtils.transfer(entityList, SysUserVo.class);
-        return new PageInfo<>(vos);
-    }
+public class SysUserServiceImpl extends BeanServiceImpl<SysUserMapper, SysUserDO> implements SysUserService {
 
     @Override
     public boolean save(SysUserDto dto) {
-        return this.save(BeanUtils.copyProperties(dto, SysUser.class));
+        return this.save(BeanUtils.copyProperties(dto, SysUserDO.class));
     }
 
     @Override
     public boolean update(SysUserDto dto) {
-        SysUser entity = BeanUtils.copyProperties(dto, SysUser.class);
+        SysUserDO entity = BeanUtils.copyProperties(dto, SysUserDO.class);
         return this.updateById(entity);
     }
 

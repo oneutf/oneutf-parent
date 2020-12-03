@@ -1,7 +1,7 @@
 package com.oneutf.file.controller;
 
 import cn.hutool.core.util.IdUtil;
-import com.oneutf.file.model.vo.FileVo;
+import com.oneutf.file.model.vo.FileVO;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,8 +26,8 @@ public class FileController {
     private String mappingUrl;
 
     @PostMapping(value = "/upload")
-    public FileVo upload(MultipartFile multipartFile) throws IOException {
-        FileVo fileVo = new FileVo();
+    public FileVO upload(MultipartFile multipartFile) throws IOException {
+        FileVO fileVo = new FileVO();
         String name = multipartFile.getOriginalFilename();
         fileVo.setName(name);
         fileVo.setType(name != null ? name.substring(name.lastIndexOf(".")) : null);
