@@ -5,7 +5,6 @@ import com.oneutf.sys.mapper.SysUserMapper;
 import com.oneutf.sys.model.dto.SysUserDto;
 import com.oneutf.sys.model.entity.SysUserDO;
 import com.oneutf.sys.service.SysUserService;
-import com.oneutf.util.BeanUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -18,19 +17,18 @@ import org.springframework.stereotype.Service;
 public class SysUserServiceImpl extends BeanServiceImpl<SysUserMapper, SysUserDO> implements SysUserService {
 
     @Override
-    public boolean save(SysUserDto dto) {
-        return this.save(BeanUtils.copyProperties(dto, SysUserDO.class));
+    public void save(SysUserDto dto) {
+        SysUserDO sysUserDO = new SysUserDO();
+        sysUserDO.setName(dto.getName());
+        sysUserDO.setPassword(dto.getPassword());
+        save(sysUserDO);
     }
 
     @Override
-    public boolean update(SysUserDto dto) {
-        SysUserDO entity = BeanUtils.copyProperties(dto, SysUserDO.class);
-        return this.updateById(entity);
+    public void update(SysUserDto dto) {
+        SysUserDO sysUserDO = getById(dto.getId());
+        sysUserDO.setName(dto.getName());
+        sysUserDO.setPassword(dto.getName());
+        updateById(sysUserDO);
     }
-
-    @Override
-    public boolean delete(String id) {
-        return this.removeById(id);
-    }
-
 }

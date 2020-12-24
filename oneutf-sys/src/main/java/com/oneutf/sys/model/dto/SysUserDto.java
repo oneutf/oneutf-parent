@@ -1,5 +1,6 @@
 package com.oneutf.sys.model.dto;
 
+import com.oneutf.bean.model.dto.BeanDTO;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,5 +9,9 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-public class SysUserDto {
+public class SysUserDto extends BeanDTO {
+
+    private String name;
+
+    private String password;
 }

@@ -30,8 +30,10 @@ public class BeanDO extends Bean {
     private LocalDateTime updateTime;
 
     @TableLogic
+    @TableField(fill = FieldFill.INSERT)
     private Boolean isDeleted;
 
     @Version
+    @TableField(fill = FieldFill.INSERT)
     private Integer version;
 }

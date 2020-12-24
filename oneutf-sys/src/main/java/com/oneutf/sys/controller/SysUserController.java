@@ -31,17 +31,14 @@ public class SysUserController extends BaseController {
 
     @PostMapping
     public Result<ResultCode> save(@RequestBody SysUserDto dto) {
-        return sysUserService.save(dto) ? success() : failed();
+        sysUserService.save(dto);
+        return success();
     }
 
     @PutMapping
     public Result<SysUserVO> update(@RequestBody SysUserDto dto) {
-        return sysUserService.update(dto) ? success() : failed();
-    }
-
-    @DeleteMapping
-    public Result<SysUserVO> delete(String id) {
-        return sysUserService.delete(id) ? success() : failed();
+        sysUserService.update(dto);
+        return success();
     }
 
 }

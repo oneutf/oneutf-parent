@@ -10,7 +10,7 @@ import lombok.*;
  */
 @Getter
 @Setter
-@TableName("sys_role")
+@TableName(value = "sys_role")
 public class SysRoleDO extends BeanDO {
 
     private String code;

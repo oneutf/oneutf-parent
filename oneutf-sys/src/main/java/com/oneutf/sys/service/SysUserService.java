@@ -14,24 +14,14 @@ public interface SysUserService extends BeanService<SysUserDO> {
     /**
      * 新增用户
      *
-     * @param dto 用户dto
-     * @return String
+     * @param dto dto
      */
-    boolean save(SysUserDto dto);
+    void save(SysUserDto dto);
 
     /**
      * 修改用户
      * @param dto dto
-     * @return boolean
      */
-    boolean update(SysUserDto dto);
-
-    /**
-     * 删除用户
-     *
-     * @param id 用户id
-     * @return String
-     */
-    boolean delete(String id);
+    void update(SysUserDto dto);
 
 }
