@@ -1,6 +1,8 @@
 package com.oneutf.file.controller;
 
 import cn.hutool.core.util.IdUtil;
+import com.oneutf.bean.result.Result;
+import com.oneutf.bean.result.ResultCode;
 import com.oneutf.file.model.vo.FileVO;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,7 +35,6 @@ public class FileController {
         fileVo.setType(name != null ? name.substring(name.lastIndexOf(".")) : null);
         String fileName = IdUtil.randomUUID() + name;
         fileVo.setUrl(mappingUrl + fileName);
-        // 生成文件
         File file = new File(path + fileName);
         multipartFile.transferTo(file);
         return fileVo;

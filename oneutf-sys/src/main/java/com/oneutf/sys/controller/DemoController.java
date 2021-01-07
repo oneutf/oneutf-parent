@@ -8,6 +8,7 @@ import com.oneutf.sys.model.entity.SysUserDO;
 import com.oneutf.sys.model.vo.DemoVO;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -24,7 +25,8 @@ import java.io.IOException;
 @RequiredArgsConstructor
 public class DemoController extends BaseController {
 
-    private final RedisUtils redisUtils;
+    @Autowired
+    private RedisUtils redisUtils;
 
     @RequestMapping(value = "/email", method = RequestMethod.POST)
     public String email() {
@@ -44,9 +46,8 @@ public class DemoController extends BaseController {
         SysUserDO sysUserDO = new SysUserDO();
         sysUserDO.setName("one");
         sysUserDO.setPassword("hanhan");
-        redisUtils.setCacheObject("user", sysUserDO);
-        sysUserDO = redisUtils.getCacheObject("user");
         System.out.println(sysUserDO);
+        redisUtils.setCacheObject(sysUserDO.getName(), sysUserDO);
         return "success";
     }
 

@@ -9,8 +9,9 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import static com.oneutf.bean.result.Result.failed;
 
 /**
+ * 全局异常拦截类
+ *
  * @author oneutf
- * @desc 全局异常拦截类
  */
 @Slf4j
 @RestControllerAdvice
