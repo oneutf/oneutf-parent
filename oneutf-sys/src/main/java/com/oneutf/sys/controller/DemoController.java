@@ -23,7 +23,7 @@ import java.io.IOException;
 @RestController
 @RequestMapping(value = "/test")
 @RequiredArgsConstructor
-public class DemoController extends BaseController {
+public class DemoController implements BaseController {
 
     @Autowired
     private RedisUtils redisUtils;

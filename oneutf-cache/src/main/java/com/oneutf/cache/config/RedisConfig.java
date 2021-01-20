@@ -7,8 +7,9 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
+ * 配置redisTemplate
+ *
  * @author oneutf
- * @desc
  */
 @Configuration
 public class RedisConfig {

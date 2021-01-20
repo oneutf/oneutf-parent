@@ -14,13 +14,14 @@ import static com.oneutf.bean.result.Result.failed;
 import static com.oneutf.bean.result.Result.success;
 
 /**
+ * user控制器
+ *
  * @author oneutf
- * @desc user控制器
  */
 @RestController
 @RequestMapping("/sys/user")
 @RequiredArgsConstructor
-public class SysUserController extends BaseController {
+public class SysUserController implements BaseController {
 
     private final SysUserService sysUserService;
 

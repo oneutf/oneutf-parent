@@ -14,8 +14,9 @@ import java.io.File;
 import java.io.IOException;
 
 /**
+ * 文件上传接口
+ *
  * @author oneutf
- * @desc 文件上传接口
  */
 @RestController
 @RequestMapping("/file")

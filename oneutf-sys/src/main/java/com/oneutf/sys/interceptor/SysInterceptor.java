@@ -7,8 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
+ * sys模块拦截器
+ *
  * @author oneutf
- * @desc sys模块拦截器
  */
 @RequiredArgsConstructor
 public class SysInterceptor implements HandlerInterceptor {

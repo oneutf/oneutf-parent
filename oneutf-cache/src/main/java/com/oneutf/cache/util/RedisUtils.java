@@ -6,8 +6,9 @@ import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Component;
 
 /**
+ * redis工具类
+ *
  * @author oneutf
- * @desc redis工具类
  */
 @Component
 public class RedisUtils {

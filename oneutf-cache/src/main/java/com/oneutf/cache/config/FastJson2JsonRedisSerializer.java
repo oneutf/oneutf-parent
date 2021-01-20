@@ -8,8 +8,9 @@ import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.SerializationException;
 
 /**
+ * 自定义fastJson序列化redis配置类
+ *
  * @author oneutf
- * @desc 自定义fastJson序列化redis配置类
  */
 public class FastJson2JsonRedisSerializer<T> implements RedisSerializer<T> {
 

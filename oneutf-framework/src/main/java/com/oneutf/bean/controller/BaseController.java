@@ -1,8 +1,9 @@
 package com.oneutf.bean.controller;
 
 /**
+ * controller  抽象类
+ *
  * @author oneutf
- * @desc controller  抽象类
  */
-public abstract class BaseController {
+public interface BaseController {
 }

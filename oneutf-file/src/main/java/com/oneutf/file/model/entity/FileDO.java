@@ -10,4 +10,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class FileDO extends BeanDO {
+
+    private String name;
+
+    private String url;
 }

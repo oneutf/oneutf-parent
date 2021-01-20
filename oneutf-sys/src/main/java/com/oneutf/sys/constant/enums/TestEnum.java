@@ -1,8 +1,9 @@
 package com.oneutf.sys.constant.enums;
 
 /**
- * @author oneutd
- * @desc 测试使用
+ * 测试使用
+ *
+ * @author oneutf
  */
 public enum TestEnum {
 

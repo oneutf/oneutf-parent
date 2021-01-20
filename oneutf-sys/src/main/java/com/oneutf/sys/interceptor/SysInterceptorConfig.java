@@ -7,8 +7,9 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
+ * 注册拦截器配置
+ *
  * @author oneutf
- * @desc 注册拦截器配置
  */
 @Configuration
 public class SysInterceptorConfig implements WebMvcConfigurer {
