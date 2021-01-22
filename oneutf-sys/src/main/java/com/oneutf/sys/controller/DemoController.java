@@ -3,7 +3,6 @@ package com.oneutf.sys.controller;
 import cn.hutool.poi.excel.ExcelUtil;
 import com.oneutf.bean.controller.BaseController;
 import com.oneutf.cache.util.RedisUtils;
-import com.oneutf.sys.constant.enums.TestEnum;
 import com.oneutf.sys.model.entity.SysUserDO;
 import com.oneutf.sys.model.vo.DemoVO;
 import lombok.RequiredArgsConstructor;
@@ -13,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 
 /**
  * 测试
@@ -54,7 +54,8 @@ public class DemoController implements BaseController {
     @GetMapping("/getDemoVo")
     public DemoVO getDemoVo() {
         DemoVO demoVo = new DemoVO();
-        demoVo.setTestEnum(TestEnum.SUCCESS);
+        demoVo.setBigDecimal(new BigDecimal("0.00054"));
+        System.out.println(demoVo.getBigDecimal());
         return demoVo;
     }
 

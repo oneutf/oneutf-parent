@@ -1,9 +1,12 @@
 package com.oneutf.sys.model.vo;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.oneutf.bean.model.bean.Bean;
-import com.oneutf.sys.constant.enums.TestEnum;
+import com.oneutf.serializer.BigDecimalSerializer;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.math.BigDecimal;
 
 /**
  * @author yf@jingruit
@@ -12,5 +15,7 @@ import lombok.Setter;
 @Setter
 public class DemoVO extends Bean {
 
-    private TestEnum testEnum;
+    @JsonSerialize(using = BigDecimalSerializer.class)
+    private BigDecimal bigDecimal;
+
 }
