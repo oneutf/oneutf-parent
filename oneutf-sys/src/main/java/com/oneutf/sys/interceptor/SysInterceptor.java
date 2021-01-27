@@ -1,7 +1,7 @@
 package com.oneutf.sys.interceptor;
 
-import lombok.RequiredArgsConstructor;
-import org.springframework.web.servlet.HandlerInterceptor;
+import com.oneutf.bean.service.BeanHandlerInterceptor;
+import org.springframework.context.annotation.Configuration;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,11 +11,12 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author oneutf
  */
-@RequiredArgsConstructor
-public class SysInterceptor implements HandlerInterceptor {
+@Configuration
+public class SysInterceptor implements BeanHandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+        System.out.println(1);
         return true;
     }
 }
